@@ -1,0 +1,66 @@
+@CHARSET "UTF-8";
+
+/*
+ *
+ *
+ */
+
+/* Global config */
+
+body {
+    background: #cccccc;
+}
+
+#mfWrap {
+    /*
+     border: gray solid 1px;
+     border-radius: 8px;
+     */
+    margin-top: 22px;
+    padding-top: 12px;
+    background: white;
+}
+
+#mfFilter   {
+    position: absolute;
+    top: 22px;
+    right: 22px;
+    display: none;
+}
+
+#mfItsa   {
+    position: absolute;
+    top: 270px;
+    left: -2px;
+    display: none;
+}
+
+#mfItsaPS   {
+    position: absolute;
+    top: 330px;
+    left: -2px;
+    display: none;
+}
+
+#demo   {
+    margin-top: 60px;
+    height: 700px;
+    width: 320px;
+}
+
+.navbar-header {
+    padding: 10px;
+}
+
+.navbar-header img {
+    height: 50px;
+}
+
+
+.dropshadow {
+    border-radius: 8px;
+    height: auto;
+    -webkit-box-shadow: -5px 6px 24px 0px rgba(48, 50, 50, 0.46);
+    -moz-box-shadow: -5px 6px 24px 0px rgba(48, 50, 50, 0.46);
+    box-shadow: -5px 6px 24px 0px rgba(48, 50, 50, 0.46);
+}

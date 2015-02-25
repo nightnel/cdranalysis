@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>CDR Analysis</title>
+
+        <!-- StyleSheet include -->
+        <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="lib/bootstrap-table/dist/bootstrap-table.min.css">
+        <link rel="stylesheet" href="lib/jquery-ui/themes/base/all.css">
+        <link rel="stylesheet" href="lib/bootstrap-multiselect/dist/css/bootstrap-multiselect.css">
+        <link rel="stylesheet" href="css/BootSideMenu.css">
+        <link rel="stylesheet" href="css/style.css">
+
+        <!-- JavaScript include -->
+        <script src="lib/jquery/dist/jquery.min.js"></script>
+        <script src="lib/jquery-ui/jquery-ui.min.js"></script>
+        <script src="js/BootSideMenu.js"></script>
+        <script src="js/app.js"></script>
+    </head>
+    <body>
+        <div class="container dropshadow" id="mfWrap">
+            <!-- HEAD container -->
+
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#"> <img class="img-responsive" src="img/1417488406_web-space-px-png.png"></a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="#"><h3>CDR Analysis</h3></a>
+                        </li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <button type="button" class="navbar-toggle" data-toggle="sidebar" data-target=".sidebar">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </li>
+                        <li>
+                            <a href="#"><span class="glyphicon glyphicon-off"></span> Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- MAIN container -->
+
+            <table class="table-striped table-condensed" id="mfCDR" data-toggle="table" data-url="json/pdo.php" data-cache="false" data-sort-name="hire_date" data-sort-order="desc" data-height="650" data-show-refresh="true" data-show-columns="true" data-show-export="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true">
+                <thead>
+                    <tr>
+                        <th data-field="DATA">Data</th>
+                        <th data-field="CZAS">Czas</th>
+                        <th data-field="MODUL">Modul</th>
+                        <th data-field="NRWIRTUALNYA">CPA</th>
+                        <th data-field="INFWYBIERCZA">CPB</th>
+                        <th data-field="NRFIZYCZNYA">NrFizA</th>
+                        <th data-field="NRFIZYCZNYB">NrFizB</th>
+                        <th data-field="NRKATALOGOWYA">Katalogowy</th>
+                        <th data-field="CZASZESTAWIANIA">Czas Zestawiania</th>
+                        <th data-field="CZASTRWANIA">Czas Trwania</th>
+                        <th data-field="IMPULSY">Impulsy</th>
+                        <th data-field="TYP">Typ</th>
+                        <th data-field="PODTYP">Podtyp</th>
+                    </tr>
+                </thead>
+            </table>
+
+            <!-- FOOTER container -->
+            <footer>
+                <div class="text-center well well-sm">
+                    Platform Operation
+                    <br />
+                    &copy; 2014
+                </div>
+            </footer>
+        </div>
+
+        <button type="button" class="btn btn-default btn-primary btn-lg" id="mfItsa">
+            <span>ITSA</span>
+        </button>
+        <button type="button" class="btn btn-default btn-warning btn-lg" id="mfItsaPS">
+            <span>ITSAPS</span>
+        </button>
+
+        <!-- Sidebar Button -->
+        <button type="button" class="btn btn-default btn-lg" data-toggle="sidebar" data-target=".sidebar" id="mfFilter">
+            <span class="glyphicon glyphicon-list"></span>
+        </button>
+
+        <!-- Sidebar Panel -->
+        <div id="demo" class="panel panel-default dropshadow">
+            <div class="panel-heading">
+                <h2 class="panel-title text-center">Filtry</h2>
+            </div>
+            <div class="panel-body">
+                <form class="form-horizontal" id="formCDR">
+                    <div class="form-group">
+                        <label for="example-label" class="control-label col-xs-3">DATA</label>
+                        <div class="col-xs-6">
+                            <select id="formDATA" multiple="multiple">
+                                <option value="trf2_02_2015">02-2015</option>
+                                <option value="trf2_01_2015">01-2015</option>
+                                <option value="trf2_12_2014">12-2014</option>
+                                <option value="trf2_11_2014">11-2014</option>
+                                <option value="trf2_10_2014">10-2014</option>
+                                <option value="trf2_09_2014">09-2014</option>
+                                <option value="trf2_08_2014">08-2014</option>
+                                <option value="trf2_07_2014">07-2014</option>
+                                <option value="trf2_06_2014">06-2014</option>
+                                <option value="trf2_05_2014">05-2014</option>
+                                <option value="trf2_04_2014">04-2014</option>
+                                <option value="trf2_03_2014">03-2014</option>
+                                <option value="trf2_02_2014">02-2014</option>
+                                <option value="trf2_01_2014">01-2014</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="example-label" class="control-label col-xs-3">MODUL</label>
+                        <div class="col-xs-6">
+                            <select id="formMODULE" multiple="multiple">
+                                <option value="1" selected="selected">OMK1</option>
+                                <option value="2" selected="selected">OMK2</option>
+                                <option value="4" selected="selected">OMK3</option>
+                                <option value="7" selected="selected">OMK5</option>
+                                <option value="8" selected="selected">OMK6</option>
+                                <option value="21" selected="selected">OMK7</option>
+                                <option value="3" selected="selected">TMK1</option>
+                                <option value="5" selected="selected">TMK2</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="NRWIRTUALNYA" class="control-label col-xs-3">CPA</label>
+                        <div class="col-xs-6">
+                            <input type="input" class="form-control" id="formNRWIRTUALNYA">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="NRWIRTUALNYA" class="control-label col-xs-3">CPB</label>
+                        <div class="col-xs-6">
+                            <input type="input" class="form-control" id="formINFWYBIERCZA">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="NRWIRTUALNYA" class="control-label col-xs-3">Katalog</label>
+                        <div class="col-xs-6">
+                            <input type="input" class="form-control" id="formKATALOGOWY">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="NRWIRTUALNYA" class="control-label col-xs-3">FizA</label>
+                        <div class="col-xs-6">
+                            <input type="input" class="form-control" id="formNrFizA">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="NRWIRTUALNYA" class="control-label col-xs-3">FizB</label>
+                        <div class="col-xs-6">
+                            <input type="input" class="form-control" id="formNrFizB">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="NRWIRTUALNYA" class="control-label col-xs-3">Limit</label>
+                        <div class="col-xs-6">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="100" checked>
+                                    100</label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="1000">
+                                    1000</label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios" id="optionsRadios3" value="unlimited">
+                                    Unlimited</label>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="panel-footer">
+                <button type="button" class="btn btn-primary" id="mfSearch">
+                    Szukaj <span class="glyphicon glyphicon-search"></span>
+                </button>
+            </div>
+        </div>
+
+        <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="lib/bootstrap-table/dist/bootstrap-table.min.js"></script>
+        <script src="lib/bootstrap-table/dist/extensions/export/bootstrap-table-export.min.js"></script>
+        <script src="lib/table-export/tableExport.js"></script>
+        <script src="lib/table-export/jquery.base64.js"></script>
+        <script src="lib/bootstrap-multiselect/dist/js/bootstrap-multiselect.js"></script>
+    </body>
+</html>
